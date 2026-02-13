@@ -93,9 +93,4 @@ RUN mkdir -p /comfyui/models/sams && \
 RUN mkdir -p /comfyui/input && \
     wget -q -O /comfyui/input/file.blend https://huggingface.co/Srivarshan7/my-assets/resolve/b61a31e/file.blend
 
-# =======================================================
-# 6. STARTUP (Xvfb Virtual Display for Headless Rendering)
-# =======================================================
-ENV DISPLAY=:99
-# Starts Xvfb to prevent Blender rendering crashes
-CMD Xvfb :99 -screen 0 1024x768x24 > /dev/null 2>&1 & sleep 5 && python -u /rp_handler.py
+
